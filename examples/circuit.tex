@@ -1,0 +1,26 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[siunitx]{circuitikz}
+
+\begin{document}
+\begin{figure}[htbp]
+    \begin{circuitikz}[font=\tiny]
+        \input{../includes/electric/components/ic/a3060}
+        \A3060(4,4){U1}
+        \draw
+            (U1 NCS) to[short, -o] ++(-2.5,0)
+            (U1 MISO) to[short, -o] ++(-2.5,0)
+            (U1 SCLK) -- ++(-1.5,0) to[short, -o, l=500<\kilo\hertz>] ++(-1,0)
+            (U1 MOSI) to[short, -o] ++(-2.5,0)
+            (U1 RESET) -- ++(-1,0) -- ++(0,2.7) to[push button, l=RESET] ++(0,1.3) to[short,-*] ++(.5,0)
+            (U1 NPD) -- ++(-.5,0) -- ++(0,4.5) to[short, -*] ++(7,0)
+            (U1 OSC OUT) -- ++(-1,0) to[PZ, l_=24<\mega\hertz>] ++(0,-1) -- (U1 OSC IN)
+            (U1 VDD3 17) to[short, -*] ++(.5,0)
+            (U1 VDD3 15) -- ++(.5,0) -- (7.5,8) node[vcc] {3.3 V}
+            (U1 GND 19) -- ++(2.75,0) -- (9.75,1.5) node[ground] {}
+            (U1 GND 16) to[short, -*] ++(2.75,0)
+            (U1 REFB) -- ++(1.25,0) to[polar capacitor, l=2.2<\micro\farad>] ++(0,-1) -- ++(-.75,0) -- ++(0,.5) -- ++(-.5,0)
+            (8.5,2.6) node{$+$};
+    \end{circuitikz}
+    \caption{Minimum external wiring}
+\end{figure}
+\end{document}

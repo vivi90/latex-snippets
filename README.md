@@ -1,6 +1,10 @@
 # Collection of LaTeX snippets
 This is a collection of my own created [LaTeX](https://www.latex-project.org) snippets.
 
+## Used packages
+ * [circuitikz](https://ctan.org/pkg/circuitikz)
+ * [siunitx](https://ctan.org/pkg/siunitx) (texlive-science)
+
 ## Contribution
 Every contribution is welcomed, of course.
 Just fork this repository, make your changes and create a merge request.
